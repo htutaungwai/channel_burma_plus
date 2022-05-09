@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isTriggered: false,
+  menuFlag: false,
 };
 
 export const menuSlice = createSlice({
   name: "menu",
   initialState,
   reducers: {
-    toggle: (state) => {
-      state.isTriggered = !state.isTriggered;
+    toggleMenuFlag: (state) => {
+      state.menuFlag = !state.menuFlag;
     },
   },
 });
 
-export const { addMovies } = menuSlice.actions;
+export const { toggleMenuFlag } = menuSlice.actions;
 export const getMenuState = (state) => state.menu;
 export default menuSlice.reducer;

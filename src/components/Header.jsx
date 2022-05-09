@@ -1,14 +1,16 @@
 import React from "react";
 import { ImPlus } from "react-icons/im";
 import { IoPersonCircleSharp, IoMenu } from "react-icons/io5";
-import { useSelector } from "react-redux";
-import { getMenuState } from "../features/menu/menu";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenuState, toggleMenuFlag } from "../features/menu/menu";
+import { motion } from "framer-motion";
+
 const Header = () => {
-  const { isTriggered } = useSelector(getMenuState);
+  const { menuFlag } = useSelector(getMenuState);
+  const dispatch = useDispatch();
 
   return (
     <header>
-      <p>Hello</p>
       {/* for destop and tablet */}
       <div className="w-full min-h-[6rem] md:flex items-center justify-between px-10 fixed hidden">
         <div className="relative z-20">
@@ -29,7 +31,23 @@ const Header = () => {
             <p>download</p>
           </div>
 
-          <IoPersonCircleSharp className="w-60 h-auto rounded-full text-white cursor-pointer hover:bg-slate-700 duration-300 ease-in-out transition-all" />
+          <div className="relative">
+            <IoPersonCircleSharp
+              className="w-60 h-auto rounded-full text-white cursor-pointer hover:bg-slate-700 duration-300 ease-in-out transition-all"
+              onClick={() => {
+                dispatch(toggleMenuFlag());
+              }}
+            />
+
+            {menuFlag && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.6 }}
+                className="absolute w-80 h-80 bg-white"
+              ></motion.div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -54,7 +72,12 @@ const Header = () => {
             <p>download</p>
           </div> */}
 
-          <IoMenu className="w-40 h-auto rounded-full text-white cursor-pointer hover:bg-slate-700 duration-300 ease-in-out transition-all" />
+          <IoMenu
+            className="w-40 h-auto rounded-full text-white cursor-pointer hover:bg-slate-700 duration-300 ease-in-out transition-all"
+            onClick={() => {
+              dispatch(toggleMenuFlag());
+            }}
+          />
         </div>
       </div>
     </header>
