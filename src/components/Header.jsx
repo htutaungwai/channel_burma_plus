@@ -8,6 +8,7 @@ const Header = () => {
 
   return (
     <header>
+      <p>Hello</p>
       {/* for destop and tablet */}
       <div className="w-full min-h-[6rem] md:flex items-center justify-between px-10 fixed hidden">
         <div className="relative z-20">
