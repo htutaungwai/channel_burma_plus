@@ -6,24 +6,31 @@ import {
   IoSettingsSharp,
   IoStar,
   IoTvSharp,
+  IoSunny,
+  IoMoon,
 } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getMenuState,
   toggleMenuFlag,
   toggleLanguageFlag,
+  toggleThemeFlag,
 } from "../features/menu/menu";
 import { motion } from "framer-motion";
 import Flags from "country-flag-icons/react/3x2";
 
 const Header = () => {
-  const { menuFlag, languageFlag } = useSelector(getMenuState);
+  const { menuFlag, languageFlag, themeFlag } = useSelector(getMenuState);
   const dispatch = useDispatch();
 
   const handleLanguage = () => {
     dispatch(toggleLanguageFlag());
   };
+  const handleTheme = () => {
+    dispatch(toggleThemeFlag());
+  };
 
+  console.log(themeFlag);
   return (
     <header>
       {/* for destop and tablet */}
@@ -45,28 +52,20 @@ const Header = () => {
               </p>
             </button>
 
-            <button>
-              <p className="text-base lg:text-lg font-semibold capitalize">
-                About
-              </p>
+            <button className="text-base lg:text-lg font-semibold capitalize">
+              <p>About</p>
             </button>
 
-            <button>
-              <p className="text-base lg:text-lg font-semibold capitalize ">
-                Support
-              </p>
+            <button className="text-base lg:text-lg font-semibold capitalize ">
+              <p>Support</p>
             </button>
 
-            <button>
-              <p className="text-base lg:text-lg font-semibold capitalize ">
-                Swap
-              </p>
+            <button className="text-base lg:text-lg font-semibold capitalize ">
+              <p>Swap</p>
             </button>
 
-            <button>
-              <p className="text-base lg:text-lg font-semibold capitalize ">
-                {!languageFlag ? "Download" : "ဒေါင်းလုတ်"}
-              </p>
+            <button className="text-base lg:text-lg font-semibold capitalize ">
+              {languageFlag ? <p>ဒေါင်းလုတ်</p> : <p>download</p>}
             </button>
           </div>
 
@@ -83,7 +82,8 @@ const Header = () => {
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.6 }}
-                className="absolute min-w-[100px] min-h-[90px]  bg-white right-5 rounded-md py-1 "
+                className="absolute min-w-[100px] min-h-[90px]  bg-white right-5 rounded-md py-1"
+                id="id"
               >
                 <div className="min-w-[150px] min-h-[30px] lg:h-10 text-base lg:text-lg text-textColor hover:bg-slate-300  text-center flex justify-center capitalize font-normal transition-all ease-in-out duration-300 cursor-pointer border-b border-slate-500">
                   <p className="flex justify-center items-center gap-1">
@@ -105,7 +105,7 @@ const Header = () => {
                     <IoTvSharp width="20px" />
                   </p>
                 </div>
-
+                {/* Language */}
                 <div className="min-w-[150px] min-h-[30px] lg:h-10 text-base lg:text-lg text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
                   <Flags.MM
                     title="United States"
@@ -125,6 +125,26 @@ const Header = () => {
                       className="sr-only peer"
                       defaultChecked={languageFlag}
                       onChange={handleLanguage}
+                    />
+
+                    <span className="w-2/5 h-4/5 bg-blue-400 absolute left-1 top-[2px] rounded-full peer-checked:bg-blue-700 peer-checked:left-6 transition-all duration-500"></span>
+                  </label>
+                </div>
+
+                {/* Theme */}
+                <div className="min-w-[150px] min-h-[30px] lg:h-10 text-base lg:text-lg text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
+                  <IoMoon className="w-6 h-auto absolute right-3 text-slate-500" />
+                  <IoSunny className="w-6 h-auto absolute left-3 text-yellow-500" />
+                  <label
+                    htmlFor="theme"
+                    className="bg-slate-300 cursor-pointer relative w-12 h-5 rounded-full peer:bg-blue-500 checked:bg-blue-300"
+                  >
+                    <input
+                      type="checkbox"
+                      id="theme"
+                      className="sr-only peer"
+                      defaultChecked={themeFlag}
+                      onChange={handleTheme}
                     />
 
                     <span className="w-2/5 h-4/5 bg-blue-400 absolute left-1 top-[2px] rounded-full peer-checked:bg-blue-700 peer-checked:left-6 transition-all duration-500"></span>

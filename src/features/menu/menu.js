@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   menuFlag: false,
   languageFlag: false,
+  themeFlag: false,
 };
 
 export const menuSlice = createSlice({
@@ -14,12 +15,17 @@ export const menuSlice = createSlice({
       return state;
     },
     toggleLanguageFlag: (state) => {
-      state.language = !state.language;
+      state.languageFlag = !state.languageFlag;
+      return state;
+    },
+    toggleThemeFlag: (state) => {
+      state.themeFlag = !state.themeFlag;
       return state;
     },
   },
 });
 
-export const { toggleMenuFlag, toggleLanguageFlag } = menuSlice.actions;
+export const { toggleMenuFlag, toggleLanguageFlag, toggleThemeFlag } =
+  menuSlice.actions;
 export const getMenuState = (state) => state.menu;
 export default menuSlice.reducer;
