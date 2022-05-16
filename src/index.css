@@ -12,3 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.menuClick:hover + .personCircle {
+  background-color: rgb(98, 98, 98);
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ImPlus } from "react-icons/im";
 import {
   IoPersonCircleSharp,
@@ -15,14 +15,18 @@ import {
   toggleMenuFlag,
   toggleLanguageFlag,
   toggleThemeFlag,
+  toggleMobileMenuFlag,
 } from "../features/menu/menu";
 import { motion } from "framer-motion";
 import Flags from "country-flag-icons/react/3x2";
 
 const Header = () => {
-  const { menuFlag, languageFlag, themeFlag } = useSelector(getMenuState);
-  const dispatch = useDispatch();
+  // Calling Essentail Top Level Functions
 
+  const { menuFlag, languageFlag, themeFlag, mobileMenuFlag } =
+    useSelector(getMenuState);
+  const dispatch = useDispatch();
+  let menuRef = useRef();
   const handleLanguage = () => {
     dispatch(toggleLanguageFlag());
   };
@@ -30,11 +34,37 @@ const Header = () => {
     dispatch(toggleThemeFlag());
   };
 
-  console.log(themeFlag);
+  // The function that creates a dom modle to translate english to burmese
+  const createDomNode = (burmese, english, name, tag) => {
+    if (tag === undefined || "") tag = "p";
+    let domNode = React.createElement(
+      tag,
+      { className: `${name}` },
+      `${languageFlag ? burmese : english}`
+    );
+    return domNode;
+  };
+
+  // Checking Click Outside
+  useEffect(() => {
+    const handler = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        event.target.id !== "menuIcon"
+      ) {
+        dispatch(toggleMenuFlag());
+      }
+    };
+    //Listening mousedown
+    if (menuFlag) document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [menuFlag]);
+
   return (
     <header>
       {/* for destop and tablet */}
-      <div className="w-full min-h-[6rem] md:flex items-center justify-between px-10 fixed hidden">
+      <div className="w-full min-h-[6rem] md:flex items-center justify-between px-10  fixed hidden">
         <div className="relative z-20">
           <p className="text-white text-[1.3rem] lg:text-[2rem] font-semibold uppercase font-[Righteous] z-30">
             channel burma
@@ -65,17 +95,19 @@ const Header = () => {
             </button>
 
             <button className="text-base lg:text-lg font-semibold capitalize ">
-              {languageFlag ? <p>ဒေါင်းလုတ်</p> : <p>download</p>}
+              {createDomNode("burmese", "english", "text-red-300")}
             </button>
           </div>
 
           <div className="relative">
-            <IoPersonCircleSharp
-              className="w-60 h-auto rounded-full text-white cursor-pointer hover:bg-slate-700 duration-300 ease-in-out transition-all"
+            <div
+              className="absolute w-full h-full  rounded-full cursor-pointer menuClick"
+              id="menuIcon"
               onClick={() => {
                 dispatch(toggleMenuFlag());
               }}
-            />
+            ></div>
+            <IoPersonCircleSharp className="w-60 h-auto rounded-full text-white   duration-300 ease-in-out transition-all personCircle" />
 
             {menuFlag && (
               <motion.div
@@ -83,7 +115,7 @@ const Header = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.6 }}
                 className="absolute min-w-[100px] min-h-[90px]  bg-white right-5 rounded-md py-1"
-                id="id"
+                ref={menuRef}
               >
                 <div className="min-w-[150px] min-h-[30px] lg:h-10 text-base lg:text-lg text-textColor hover:bg-slate-300  text-center flex justify-center capitalize font-normal transition-all ease-in-out duration-300 cursor-pointer border-b border-slate-500">
                   <p className="flex justify-center items-center gap-1">
@@ -155,35 +187,43 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {/* Desktop and Tablet end */}
 
-      {/* for mobile */}
+      {/* For mobile */}
+      <div className="fixed w-full flex flex-col md:hidden">
+        <div className="w-full min-h-[6rem] flex items-center justify-between px-5 bg-darkPurple">
+          <div className="relative z-20">
+            <p className="text-white text-lg font-semibold uppercase font-[Righteous] z-30">
+              channel burma
+            </p>
+            <div className="absolute -right-10 -z-10 top-1/2 -translate-y-1/2">
+              <ImPlus className="text-red-500 w-14" />
+            </div>
+          </div>
 
-      <div className="w-full min-h-[6rem] flex items-center justify-between px-5 fixed md:hidden">
-        <div className="relative z-20">
-          <p className="text-white text-lg font-semibold uppercase font-[Righteous] z-30">
-            channel burma
-          </p>
-          <div className="absolute -right-10 -z-10 top-1/2 -translate-y-1/2">
-            <ImPlus className="text-red-500 w-14" />
+          <div className="flex overflow-hidden rounded-rounded">
+            <IoMenu
+              className="w-40 h-auto text-white"
+              onClick={() => {
+                dispatch(toggleMobileMenuFlag());
+              }}
+            />
           </div>
         </div>
 
-        <div className="flex">
-          {/* <div className="flex gap-5 justify-center items-center text-lg font-semibold capitalize mr-10 text-white">
-            <p>services</p>
-            <p>about</p>
-            <p>support</p>
-            <p>swap</p>
-            <p>download</p>
-          </div> */}
-
-          <IoMenu
-            className="w-40 h-auto rounded-full text-white cursor-pointer hover:bg-slate-700 duration-300 ease-in-out transition-all"
-            onClick={() => {
-              dispatch(toggleMenuFlag());
+        {mobileMenuFlag && (
+          <motion.div
+            className="w-full bg-orange-500 flex flex-col"
+            initial={{ height: 0 }}
+            animate={{ height: "80vh" }}
+            exit={{ height: 100 }}
+            transition={{
+              default: { duration: 0.5 },
             }}
-          />
-        </div>
+          >
+            <div className="w-full bg-red-400 h-225"></div>
+          </motion.div>
+        )}
       </div>
     </header>
   );
