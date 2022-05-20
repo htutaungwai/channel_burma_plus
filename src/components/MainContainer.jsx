@@ -10,7 +10,8 @@ const MainContainer = () => {
   const { menuFlag } = useSelector(getMenuState);
   return (
     <div className={"min-h-screen w-full"}>
-      <HomeContainer />
+      <Hero />
+      <Apo />
     </div>
   );
 };

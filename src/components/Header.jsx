@@ -213,16 +213,20 @@ const Header = () => {
 
         {mobileMenuFlag && (
           <motion.div
-            className="w-full bg-orange-500 flex flex-col"
+            className="w-full bg-slate-700 flex flex-col"
             initial={{ height: 0 }}
-            animate={{ height: "80vh" }}
-            exit={{ height: 100 }}
-            transition={{
-              default: { duration: 0.5 },
+            animate={{ height: "100vh" }}
+            exit={{
+              height: 0,
+              transition: {
+                duration: 0.5,
+              },
             }}
-          >
-            <div className="w-full bg-red-400 h-225"></div>
-          </motion.div>
+            transition={{
+              duration: 0.7,
+              ease: "easeOut",
+            }}
+          ></motion.div>
         )}
       </div>
     </header>

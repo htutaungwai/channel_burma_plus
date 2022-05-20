@@ -3,12 +3,7 @@ import Apo from "./Apo";
 import Hero from "./Hero";
 
 const HomeContainer = () => {
-  return (
-    <>
-      <Hero />
-      <Apo />
-    </>
-  );
+  return <></>;
 };
 
 export default HomeContainer;
