@@ -1,17 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { getMenuState } from "../features/menu/menu";
 import Apo from "./Apo";
 import Hero from "./Hero";
-import HomeContainer from "./HomeContainer";
-import MobileMenu from "./MobileMenu";
+import QandA from "./QandA";
+import FYI from "./FYI";
 
 const MainContainer = () => {
-  const { menuFlag } = useSelector(getMenuState);
   return (
-    <div className={"min-h-screen w-full"}>
+    <div className="min-h-screen w-full relative">
       <Hero />
       <Apo />
+
+      <QandA />
+      <FYI />
     </div>
   );
 };

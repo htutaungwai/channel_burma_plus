@@ -64,10 +64,10 @@ const Header = () => {
   return (
     <header>
       {/* for destop and tablet */}
-      <div className="w-full min-h-[6rem] md:flex items-center justify-between px-10  fixed hidden">
+      <div className="w-full transition-all duration-200 ease-in  min-h-[6rem] md:flex items-center justify-between px-10  fixed hidden z-30">
         <div className="relative z-20">
           <p className="text-white text-[1.3rem] lg:text-[2rem] font-semibold uppercase font-[Righteous] z-30">
-            channel burma
+            cb
           </p>
           <div className="absolute -right-10 -z-10 top-1/2 -translate-y-1/2">
             <ImPlus className="text-red-500 w-14" />

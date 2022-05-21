@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Righteous&display=swap");
 @import url(http://fonts.googleapis.com/earlyaccess/khyay.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar&display=swap");
@@ -13,6 +14,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .menuClick:hover + .personCircle {
   background-color: rgb(98, 98, 98);
+}
+
+.headingFont {
+  font-family: "Grape Nuts";
+}
+
+.posters > img {
+  max-height: 250px;
+  opacity: 0.7;
 }
