@@ -5,6 +5,7 @@ const initialState = {
   menuFlag: false,
   languageFlag: false,
   themeFlag: false,
+  fyiFlag: false,
 };
 
 export const menuSlice = createSlice({
@@ -28,6 +29,10 @@ export const menuSlice = createSlice({
       state.mobileMenuFlag = !state.mobileMenuFlag;
       return state;
     },
+    toggleFYIFlag: (state) => {
+      state.fyiFlag = !state.fyiFlag;
+      return state;
+    },
   },
 });
 
@@ -36,6 +41,7 @@ export const {
   toggleLanguageFlag,
   toggleThemeFlag,
   toggleMobileMenuFlag,
+  toggleFYIFlag,
 } = menuSlice.actions;
 export const getMenuState = (state) => state.menu;
 export default menuSlice.reducer;

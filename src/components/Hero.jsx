@@ -6,8 +6,14 @@ import Poster2 from "../images/poster2.jpg";
 import Poster4 from "../images/poster4.jpg";
 import Poster3 from "../images/poster3.jpg";
 import Poster5 from "../images/poster5.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenuState } from "../features/menu/menu";
 
 const Hero = () => {
+  const { fyiFlag } = useSelector(getMenuState);
+  const dispatch = useDispatch();
+
+  console.log(fyiFlag);
   return (
     <section className="min-h-screen flex w-full relative overflow-hidden">
       <div className="text-white w-full max-w-lg m-auto min-h-screen flex-col text-center flex justify-center items-center z-20">
