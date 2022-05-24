@@ -10,10 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMenuState } from "../features/menu/menu";
 
 const Hero = () => {
-  const { fyiFlag } = useSelector(getMenuState);
-  const dispatch = useDispatch();
-
-  console.log(fyiFlag);
   return (
     <section className="min-h-screen flex w-full relative overflow-hidden">
       <div className="text-white w-full max-w-lg m-auto min-h-screen flex-col text-center flex justify-center items-center z-20">
