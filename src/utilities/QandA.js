@@ -1,4 +1,4 @@
-export const QAs = [
+const QAs = [
   {
     id: 1,
     question: "Tell me more about monthly plans!",
@@ -21,4 +21,11 @@ export const QAs = [
     question: "Are there any promotions?",
     answer: "For sure, we have unlimited ..xxx..x.x.x..x.x..x..x.x.",
   },
+  {
+    id: 5,
+    question: "ကိုယ့်ကိုဘယ်သူချစ်နေလဲ?",
+    answer: "မင်းကိုဘယ်သူမှမချစ်ဘူး။",
+  },
 ];
+
+export default QAs;

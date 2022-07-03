@@ -1,11 +1,16 @@
-import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AnimatedRoutes from "./AnimatedRoutes";
+import FeedControl from "./components/Feed/FeedControl";
+import FeedHeader from "./components/Feed/FeedHeader";
 
 function App() {
   return (
-    <div className="App font-[Nato Sans Myanmar] bg-secondBgColor relative">
-      <Header />
-      <MainContainer />
+    <div className="App bg-secondBgColor relative">
+      <Router>
+        <FeedHeader />
+        <AnimatedRoutes />
+        <FeedControl />
+      </Router>
     </div>
   );
 }

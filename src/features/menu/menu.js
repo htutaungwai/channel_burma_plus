@@ -12,8 +12,7 @@ export const menuSlice = createSlice({
   name: "menu",
   initialState,
   reducers: {
-    toggleMenuFlag: (state, action) => {
-      console.log(action.payload);
+    toggleMenuFlag: (state) => {
       state.menuFlag = !state.menuFlag;
       return state;
     },

@@ -16,13 +16,12 @@ import {
   toggleLanguageFlag,
   toggleThemeFlag,
   toggleMobileMenuFlag,
-} from "../features/menu/menu";
+} from "../../features/menu/menu";
 import { motion } from "framer-motion";
 import Flags from "country-flag-icons/react/3x2";
 
 const Header = () => {
-  // Calling Essentail Top Level Functions
-
+  // Calling Essential Top Level Functions
   const { menuFlag, languageFlag, themeFlag, mobileMenuFlag } =
     useSelector(getMenuState);
   const dispatch = useDispatch();
@@ -64,16 +63,15 @@ const Header = () => {
   return (
     <header>
       {/* for destop and tablet */}
-      <div className="w-full transition-all duration-200 ease-in  min-h-[6rem] md:flex items-center justify-between px-10  fixed hidden z-30">
-        <div className="relative z-20">
-          <p className="text-white text-[1.3rem] lg:text-[2rem] font-semibold uppercase font-[Righteous] z-30">
+      <div className="w-full transition-all duration-200 ease-in max-w-8xl  min-h-[6rem] md:flex items-center justify-between px-10 fixed hidden z-[60]">
+        <div className="relative">
+          <p className="text-white text-[1.3rem] lg:text-[2rem] font-semibold uppercase font-[Righteous]">
             cb
           </p>
           <div className="absolute -right-10 -z-10 top-1/2 -translate-y-1/2">
             <ImPlus className="text-red-500 w-14" />
           </div>
         </div>
-
         <div className="flex">
           <div className="flex gap-5 justify-center items-center text-base mr-10 text-white ">
             <button>
@@ -137,6 +135,7 @@ const Header = () => {
                     <IoTvSharp width="20px" />
                   </p>
                 </div>
+
                 {/* Language */}
                 <div className="min-w-[150px] min-h-[30px] lg:h-10 text-base lg:text-lg text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
                   <Flags.MM
@@ -190,7 +189,7 @@ const Header = () => {
       {/* Desktop and Tablet end */}
 
       {/* For mobile */}
-      <div className="fixed w-full flex flex-col md:hidden">
+      <div className="fixed w-full flex flex-col md:hidden z-50">
         <div className="w-full min-h-[6rem] flex items-center justify-between px-5 bg-darkPurple">
           <div className="relative z-20">
             <p className="text-white text-lg font-semibold uppercase font-[Righteous] z-30">

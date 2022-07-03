@@ -1,0 +1,38 @@
+.nextArrow {
+  top: 200px !important;
+  right: 5px !important;
+}
+
+.nextArrow::before,
+.prevArrow::before {
+  font-family: "Concert One";
+  border: 2px solid rgb(226, 226, 226);
+  background-color: rgb(72, 73, 73);
+  color: rgb(251, 251, 251);
+  border-radius: 5px;
+  padding: 0px 14px 4px 14px;
+  font-size: 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.nextArrow::before {
+  content: ">";
+}
+
+.prevArrow::before {
+  content: "<";
+}
+
+.prevArrow {
+  top: 200px !important;
+  left: 285px !important;
+}
+
+@media only screen and (min-width: 400px) {
+  .prevArrow {
+    left: 320px !important;
+  }
+}

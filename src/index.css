@@ -3,8 +3,9 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Righteous&display=swap");
-@import url(http://fonts.googleapis.com/earlyaccess/khyay.css);
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 
 body {
   margin: 0;
@@ -30,4 +31,173 @@ html {
 .posters > img {
   max-height: 250px;
   opacity: 0.7;
+}
+
+.poppins {
+  font-family: "Poppins";
+}
+
+.indie {
+  font-family: "Indie Flower", cursive, sans-serif;
+}
+
+.Kdam {
+  font-family: "Kdam Thmor Pro";
+}
+
+.new::after {
+  content: "New";
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  padding: 1px 8px;
+  line-height: 100%;
+  font-size: 0.8rem;
+  text-decoration: none;
+  background-color: rgb(233, 87, 87);
+}
+
+@media only screen and (min-width: 600px) {
+  .new::after {
+    padding: 5px 10px;
+    line-height: normal;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background-color: rgb(233, 87, 87);
+  }
+}
+.arrow {
+  display: none;
+  width: 120px;
+  height: 100px;
+  border: solid 2px #000;
+  border-color: transparent transparent #000 #000;
+  border-radius: 30% 0 0 50%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .arrow {
+    display: block;
+  }
+}
+
+.triangle {
+  position: relative;
+  background-color: #000;
+  text-align: left;
+}
+.triangle:before,
+.triangle:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+}
+.triangle,
+.triangle:before,
+.triangle:after {
+  width: 1em;
+  height: 1em;
+  border-top-right-radius: 30%;
+}
+
+.triangle {
+  transform: rotate(290deg) skewX(-30deg) scale(1, 0.866);
+}
+.triangle:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707)
+    translate(0, -50%);
+}
+.triangle:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
+
+.viewmore::after {
+  content: "view more";
+  position: absolute;
+  line-height: 3em;
+  font-weight: bold;
+  font-family: "Indie Flower", cursive, sans-serif;
+  font-size: 1.5rem;
+}
+
+.viewmore:hover .viewmoreBtn {
+  color: rgb(0, 150, 209);
+}
+
+/* Race */
+.neonText {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  padding: 0px 5px;
+}
+
+/* SVG */
+
+.svg {
+  border: 0;
+  background-clip: padding-box;
+  color: transparent;
+}
+/* msg circle */
+
+.first-circle {
+  animation-delay: 0.1s;
+}
+.second-circle {
+  animation-delay: 0.2s;
+}
+.third-circle {
+  animation-delay: 0.3s;
+}
+
+/* Responsive */
+
+.fadescreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 21;
+  opacity: 0.8;
+}
+
+/* next arrow */
+
+.nextArrow::after {
+  background-color: green;
+  content: "";
+  width: 20px;
+  height: 20px;
+}
+
+.search_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 160px);
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 40px 20px;
+  justify-content: center;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.7px);
+  -webkit-backdrop-filter: blur(3.7px);
+  cursor: pointer;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  /* From https://css.glass */
+  background: rgba(115, 115, 115, 0.81);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(17.8px);
+  -webkit-backdrop-filter: blur(17.8px);
+  border: 1px solid rgba(115, 115, 115, 0.81);
+  cursor: pointer;
 }

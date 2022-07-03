@@ -3,14 +3,11 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        40: "40px",
-        60: "60px",
         80: "80px",
         120: "120px",
         150: "150px",
         190: "190px",
         225: "225px",
-        250: "250px",
         275: "275px",
         300: "300px",
         340: "340px",
@@ -22,11 +19,8 @@ module.exports = {
       },
       height: {
         80: "80px",
-        120: "120px",
         150: "150px",
-        180: "180px",
         225: "225px",
-        250: "250px",
         300: "300px",
         340: "340px",
         370: "370px",
@@ -45,7 +39,7 @@ module.exports = {
       },
       screens: {
         xs: "350px",
-        sm: "640px",
+        sm: "440px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
@@ -59,10 +53,6 @@ module.exports = {
         cardOverlay: "rgba(256, 256, 256, 0.4)",
         lightTextGray: "#9ca0ab",
         rowBg: "rgba(233, 131, 0, 0.05)",
-        mainBgColor: "#2C2F33",
-        secondBgColor: "#23272A",
-        darkPurple: "#404EED",
-        lightPurple: "#5865F2",
       },
     },
   },

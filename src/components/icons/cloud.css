@@ -1,0 +1,127 @@
+.box {
+  background: rgba(255, 255, 255);
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cloud {
+  background: rgb(199, 198, 198);
+  width: 300px;
+  height: 100px;
+  border-radius: 150px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.cloud:after {
+  content: "";
+  background: rgb(199, 198, 198);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 50px;
+  bottom: 50%;
+  border-radius: 50%;
+}
+
+.cloud:before {
+  content: "";
+  background: rgba(255, 255, 255);
+  position: absolute;
+  width: 170px;
+  height: 150px;
+  bottom: 5px;
+  left: -15px;
+  border-radius: 50%;
+}
+
+.cloud2 {
+  background: rgb(232, 231, 231);
+  width: 300px;
+  height: 100px;
+  border-radius: 150px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.cloud2:after {
+  content: "";
+  background: rgb(232, 231, 231);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 50px;
+  bottom: 60%;
+  border-radius: 50%;
+}
+
+.cloud2:before {
+  content: "";
+  background: rgb(232, 231, 231);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: 30%;
+  left: 5%;
+  border-radius: 50%;
+}
+
+.mouth {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: solid 5px #000;
+  border-color: transparent transparent #000 transparent;
+  border-radius: 0 0 240px 50%/60px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
+}
+
+.eye {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.eye::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: rgb(232, 231, 231);
+  border-radius: 50%;
+  left: 0;
+  top: 10px;
+}
+
+.eye.left {
+  left: 80px;
+}
+
+.eye.right {
+  right: 120px;
+  z-index: 5;
+}
+
+.flag {
+  position: absolute;
+  width: 5px;
+  height: 200px;
+  bottom: 80%;
+  left: 70%;
+  background-color: rgb(0, 0, 0);
+}
+
+.flag::after {
+  content: "CB+";
+  font-size: large;
+  font-weight: bold;
+  position: absolute;
+  color: black;
+  right: 100%;
+  width: 5rem;
+  height: 3rem;
+  background-color: #ff6c85;
+}
