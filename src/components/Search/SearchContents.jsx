@@ -1,7 +1,7 @@
 import React from "react";
 import Error from "../../images/error.png";
 
-const SearchContents = ({ res }) => {
+const SearchContents = ({ res, type }) => {
   const { id, poster_path, title, name, release_date, vote_average } = res;
   let background;
 
@@ -30,6 +30,7 @@ const SearchContents = ({ res }) => {
       className="relative"
       onClick={() => {
         console.log(id);
+        console.log(type);
       }}
     >
       <div className="bg-slate-500 h-60 overflow-hidden flex justify-center relative w-fit min-w-[138px] max-w-[140px] rounded-md ">

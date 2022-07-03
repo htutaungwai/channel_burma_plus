@@ -22,8 +22,8 @@ const Search = () => {
   } = useSelector(getSearchState);
   const dispatch = useDispatch();
 
+  // keywords and page change
   useEffect(() => {
-    // console.log(currentPage);
     dispatch(
       fetchSearchContents({
         keywords: String(keywords).toLocaleLowerCase(),
@@ -31,7 +31,7 @@ const Search = () => {
         page: currentPage,
       })
     );
-  }, [keywords, currentPage]);
+  }, [keywords, currentPage, type]);
 
   // console.log(keywords);
   // console.log("status: " + status);
@@ -63,7 +63,7 @@ const Search = () => {
 
             <div className="search_container w-full h-fit text-white my-8 mx-auto">
               {results?.map((res) => (
-                <SearchContents res={res} key={res.id} />
+                <SearchContents res={res} key={res.id} type={type} />
               ))}
             </div>
 
@@ -94,7 +94,6 @@ const Search = () => {
         {keywords !== "" ? (
           <button
             onClick={() => {
-              console.log("reserach: " + keywords);
               dispatch(
                 fetchSearchContents({
                   keywords: String(keywords).toLocaleLowerCase(),
