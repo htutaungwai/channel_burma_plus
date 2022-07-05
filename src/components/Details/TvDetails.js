@@ -43,7 +43,7 @@ const TvDetails = () => {
     );
   } else {
     return (
-      <div className="w-full min-h-screen  text-white font-bold poppins flex justify-center items-center">
+      <div className="w-full min-h-screen  text-white font-bold poppins flex justify-center items-center md:font-semibold">
         loading....
       </div>
     );
