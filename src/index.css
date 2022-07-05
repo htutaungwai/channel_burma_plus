@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
@@ -179,6 +180,16 @@ html {
   grid-template-rows: 1fr 1fr 1fr;
   gap: 40px 20px;
   justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .search_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 40px 0px;
+  }
 }
 
 .custom-scroll::-webkit-scrollbar {

@@ -2,6 +2,12 @@
   top: 200px !important;
   right: 5px !important;
 }
+@media only screen and (min-width: 768px) {
+  .nextArrow {
+    top: 400px !important;
+    right: 50px !important;
+  }
+}
 
 .nextArrow::before,
 .prevArrow::before {
@@ -16,6 +22,14 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .nextArrow::before,
+  .prevArrow::before {
+    font-size: 40px !important;
+    padding: 0px 20px 8px 20px;
+  }
 }
 
 .nextArrow::before {
@@ -34,5 +48,12 @@
 @media only screen and (min-width: 400px) {
   .prevArrow {
     left: 320px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .prevArrow {
+    top: 400px !important;
+    left: 600px !important;
   }
 }

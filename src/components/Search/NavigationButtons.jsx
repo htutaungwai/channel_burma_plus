@@ -32,9 +32,9 @@ const NavigationButtons = ({ total, current }) => {
   }
 
   return (
-    <div className="text-white w-full ">
+    <div className="text-white w-full md:text-2xl">
       {buttons && (
-        <div className="flex gap-2 justify-center items-center">
+        <div className="flex gap-2 justify-center items-center ">
           {current !== 1 && (
             <button
               onClick={() => {
@@ -42,7 +42,7 @@ const NavigationButtons = ({ total, current }) => {
                 dispatch(setPrevPage());
               }}
             >
-              <FaAngleLeft className="rounded-full bg-slate-300 w-7 h-7 text-black font-bold font-['Concert One'] text-center flex justify-center items-center" />
+              <FaAngleLeft className="rounded-full bg-slate-300 w-7 h-7 text-black font-bold font-['Concert One'] text-center flex justify-center items-center md:w-12 md:h-12" />
             </button>
           )}
 
@@ -55,7 +55,7 @@ const NavigationButtons = ({ total, current }) => {
                     btn === current
                       ? "bg-red-500 text-white"
                       : "bg-slate-300 text-black"
-                  } w-7 h-7  font-bold font-['Concert One'] `}
+                  } w-7 h-7  font-bold font-['Concert One'] text-3xl md:w-12 md:h-12 `}
                   onClick={() => {
                     if (btn !== current) {
                       // manual page
@@ -75,7 +75,7 @@ const NavigationButtons = ({ total, current }) => {
                 dispatch(setNextPage());
               }}
             >
-              <FaAngleRight className="rounded-full bg-slate-300 w-7 h-7 text-black font-bold font-['Concert One'] text-center flex justify-center items-center" />
+              <FaAngleRight className="rounded-full bg-slate-300 w-7 h-7 text-black font-bold font-['Concert One'] text-center flex justify-center items-center md:w-12 md:h-12" />
             </button>
           )}
         </div>

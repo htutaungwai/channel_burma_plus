@@ -52,6 +52,7 @@ const FeedHeader = () => {
     if (inputValue && inputValue !== "") {
       dispatch(setManualPage(1));
       dispatch(setKeywords(inputValue));
+      setInputState(false);
       navigate("/search");
     }
   };
@@ -59,12 +60,13 @@ const FeedHeader = () => {
   if (!paths.includes(pathname)) {
     return (
       <>
-        <div className="w-full h-[8vh] text-white flex items-center justify-between px-4 text-3xl z-50">
+        <div className="w-full h-[8vh] text-white flex items-center justify-between px-4 text-3xl z-50 lg:pt-10 lg:mb-10">
           <HiMenuAlt2 />
           <h2 className="text-2xl md:text-5xl font-bold">
             CB<span className="text-red-600">&#43;</span>
           </h2>
           <HiSearchCircle
+            className=" cursor-pointer"
             onClick={() => {
               setInputState(!inputState);
             }}
@@ -113,7 +115,7 @@ const FeedHeader = () => {
                 value={inputValue}
                 onChange={handleInputValue}
               />
-              <button className=" bg-slate-300 px-2 flex justify-center items-center">
+              <button className=" bg-slate-300 px-2 flex justify-center items-center cursor-pointer">
                 <FaSearch className="text-2xl" />
               </button>
             </form>

@@ -4,7 +4,7 @@ import messengerReducer from "./messenger/messenger";
 import feedReducer from "./feed/feed";
 import insightReducer from "./feed/insight";
 import searchReducer from "./search/searchSlice";
-import detailsReducer from "./details/detailsSlice";
+
 export const store = configureStore({
   reducer: {
     menu: menuReducer,
@@ -12,6 +12,5 @@ export const store = configureStore({
     feed: feedReducer,
     insight: insightReducer,
     search: searchReducer,
-    details: detailsReducer,
   },
 });

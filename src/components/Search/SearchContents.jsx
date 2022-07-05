@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import Error from "../../images/error.png";
 
 const SearchContents = ({ res, type }) => {
+  const navigate = useNavigate();
   const { id, poster_path, title, name, release_date, vote_average } = res;
   let background;
 
@@ -29,12 +32,15 @@ const SearchContents = ({ res, type }) => {
     <div
       className="relative"
       onClick={() => {
-        console.log(id);
-        console.log(type);
+        navigate(`/product/${type}/${id}`);
       }}
     >
-      <div className="bg-slate-500 h-60 overflow-hidden flex justify-center relative w-fit min-w-[138px] max-w-[140px] rounded-md ">
-        <img src={Poster} alt={title} className="h-52 brightness-90" />
+      <div className="bg-slate-500 h-60 overflow-hidden flex justify-center relative w-fit min-w-[138px] max-w-[140px] rounded-md md:h-full md:max-w-[200px]">
+        <img
+          src={Poster}
+          alt={title}
+          className="h-52 brightness-90 md:h-full md:w-auto"
+        />
 
         {/* title */}
         <div className="w-full absolute bottom-0 h-12 bg-slate-700 ">
@@ -45,7 +51,7 @@ const SearchContents = ({ res, type }) => {
       </div>
       {/* rating */}
       <div
-        className={`absolute -top-1 right-2 w-10 h-10  rounded-full ${background} flex justify-center items-center`}
+        className={`absolute -top-1 right-2 w-10 h-10  rounded-full ${background} flex justify-center items-center md:-top-4 md:right-9 md:w-14 md:h-14 md:text-2xl`}
       >
         <h3 className="font-bold poppins ">
           {vote_average > 0 ? vote_average : "N/A"}

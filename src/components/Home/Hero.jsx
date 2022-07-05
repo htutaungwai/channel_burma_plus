@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 import Poster1 from "../../images/poster1.jpg";
@@ -16,6 +16,7 @@ import { IoSparkles } from "react-icons/io5";
 import Card from "../card/Card";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* First */}
@@ -353,9 +354,11 @@ const Hero = () => {
             scale: 1.1,
           }}
           className="flex gap-1 w-48 justify-center items-center bg-slate-700 rounded-full py-3 px-8 hover:shadow-xl shadow-white cursor-pointer z-10 m-auto text-white font-semibold mb-10 "
+          onClick={() => {
+            navigate("/feed");
+          }}
         >
-          Download
-          <FiDownload />
+          Feed
         </motion.div>
       </section>
     </>

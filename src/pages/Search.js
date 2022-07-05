@@ -33,13 +33,6 @@ const Search = () => {
     );
   }, [keywords, currentPage, type]);
 
-  // console.log(keywords);
-  // console.log("status: " + status);
-  // console.log("error: " + error);
-  // console.log(results);
-  // console.log(totalPages);
-  // console.log(totalResults);
-  // console.log(currentPage);
   if (
     keywords !== "" &&
     status === "idle" &&
@@ -51,17 +44,16 @@ const Search = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: 0.8 }}
-        className="w-full min-h-screen pb-[14vh] sm:pb-0"
+        className="w-full min-h-screen pb-[14vh]"
       >
         {totalResults > 0 && (
           <main>
-            <h2 className="text-white text-center my-2">
-              Showing results for " {keywords} "
-            </h2>
-
             <NavigationButtons current={currentPage} total={totalPages} />
 
-            <div className="search_container w-full h-fit text-white my-8 mx-auto">
+            <h2 className="text-white text-center my-2 md:text-4xl md:my-12">
+              Showing results for " {keywords} "
+            </h2>
+            <div className="search_container w-full h-fit text-white my-8 mx-auto md:pl-5">
               {results?.map((res) => (
                 <SearchContents res={res} key={res.id} type={type} />
               ))}

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -26,15 +28,26 @@ function SamplePrevArrow(props) {
 const SlideContents = ({ collections, status }) => {
   // Slide Settings
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 6,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false,
+        },
+      },
+    ],
   };
 
   if (collections && status === "idle") {
@@ -46,7 +59,7 @@ const SlideContents = ({ collections, status }) => {
         transition={{ delay: 0.5, duration: 1 }}
         className="w-full h-full flex justify-center items-center relative pb-8"
       >
-        <div className="w-11/12">
+        <div className="w-11/12 md:w-full lg:w-11/12">
           <Slider {...settings}>
             {collections.map(
               ({
@@ -81,20 +94,24 @@ const SlideContents = ({ collections, status }) => {
 
                 return (
                   <div
-                    className="h-full w-full flex justify-center items-center relative "
+                    className="h-full w-full flex justify-center items-center relative rounded-lg overflow-hidden"
                     key={id}
                   >
-                    <img src={Poster} alt={movieTitle} className="w-28" />
-                    <div className="rating absolute w-28 top-0  font-bold rounded-tr-medium flex justify-end">
+                    <img
+                      src={Poster}
+                      alt={movieTitle}
+                      className="w-28 md:w-56 lg:w-44 overflow-hidden rounded-lg"
+                    />
+                    <div className="rating absolute w-28 top-0  font-bold rounded-tr-medium flex justify-end md:w-56 lg:w-44  overflow-hidden rounded-tr-lg">
                       <div
-                        className={`${background} w-fit pl-4 pr-2 pb-2 text-white rounded-bl-full`}
+                        className={`${background} w-fit pl-4 pr-2 pb-2 text-white rounded-bl-full md:text-2xl md:pl-6 md:pb-4 `}
                       >
                         {vote_average === 0
                           ? "N/A"
                           : Number.parseFloat(vote_average).toFixed(1)}
                       </div>
                     </div>
-                    <div className="absolute title w-28 bg-slate-600 h-10 -bottom-0 font-medium text-slate-100 rounded-t-md capitalize text-xs p-1 text-center">
+                    <div className="absolute title w-28 bg-slate-600 h-10 -bottom-0 font-medium text-slate-100 rounded-t-md capitalize text-xs p-1 text-center md:h-20 md:w-56 md:text-2xl lg:text-lg lg:w-44 lg:h-16 rounded-b-lg poppins">
                       <h4>{movieTitle} </h4>
                     </div>
                   </div>
