@@ -1,4 +1,5 @@
 import React from "react";
+import Error from "../../images/error.png";
 
 const DetailsContents = ({ content }) => {
   const {
@@ -17,9 +18,14 @@ const DetailsContents = ({ content }) => {
     first_air_date,
   } = content;
 
-  const Backdrop = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
+  console.log(content);
+  const Backdrop = backdrop_path
+    ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
+    : Error;
 
-  const Poster = `https://image.tmdb.org/t/p/original/${poster_path}`;
+  const Poster = poster_path
+    ? `https://image.tmdb.org/t/p/original/${poster_path}`
+    : Error;
 
   let movieTitle = original_title === undefined ? name : title;
 
