@@ -42,12 +42,12 @@
 
 .prevArrow {
   top: 200px !important;
-  left: 285px !important;
+  left: 70% !important;
 }
 
 @media only screen and (min-width: 400px) {
   .prevArrow {
-    left: 320px !important;
+    left: 300px !important;
   }
 }
 

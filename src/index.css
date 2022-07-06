@@ -180,6 +180,8 @@ html {
   grid-template-rows: 1fr 1fr 1fr;
   gap: 40px 20px;
   justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
 }
 
 @media only screen and (min-width: 768px) {

@@ -49,7 +49,7 @@ const DetailsContents = ({ content }) => {
 
   return (
     <div className="w-full px-4 md:px-12  md:text-xl">
-      <h2 className="poppins my-4 text-xl bold md:text-4xl">{movieTitle}</h2>
+      <h2 className="poppins my-4 text-4xl font-bold  mb-10">{movieTitle}</h2>
       <div className="w-full h-[400px] ">
         <img
           src={Poster}
@@ -73,7 +73,9 @@ const DetailsContents = ({ content }) => {
       </div>
 
       <div className="mt-6">
-        <h3 className="poppins underline-offset-2 underline">Overview</h3>
+        <h3 className="poppins underline-offset-2 underline text-2xl font-bold">
+          Overview
+        </h3>
 
         <p className="mt-4 text-md">{overview ? overview : "No details"}</p>
       </div>

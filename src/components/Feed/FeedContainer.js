@@ -53,7 +53,7 @@ const FeedContainer = () => {
   // The empty array selected from the store, the array status and type are passed to the slide. In slide, the slide check the type and fetch the data from the api and then passes again.
   return (
     <div className="min-w-screen min-h-screen bg-secondBgColor pb-[10vh] overflow-x-hidden md:px-5 ">
-      <h2 className="poppins font-bold tex-white pl-8 pt-2 text-lg uppercase text-white lg:text-4xl  lg:mt-12 lg:pl-20">
+      <h2 className="poppins font-bold tex-white pl-8 pt-2 text-lg uppercase text-white lg:text-4xl  lg:mt-12 lg:pl         -20">
         Movies
       </h2>
       <div className=" min-h-[300px] md:min-h-[500px] w-full  ">

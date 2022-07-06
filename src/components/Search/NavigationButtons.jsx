@@ -32,7 +32,7 @@ const NavigationButtons = ({ total, current }) => {
   }
 
   return (
-    <div className="text-white w-full md:text-2xl">
+    <div className="text-white w-full  md:text-2xl">
       {buttons && (
         <div className="flex gap-2 justify-center items-center ">
           {current !== 1 && (
@@ -55,7 +55,7 @@ const NavigationButtons = ({ total, current }) => {
                     btn === current
                       ? "bg-red-500 text-white"
                       : "bg-slate-300 text-black"
-                  } w-7 h-7  font-bold font-['Concert One'] text-3xl md:w-12 md:h-12 `}
+                  } w-7 h-7  font-bold font-['Concert One'] md:text-3xl md:w-12 md:h-12 `}
                   onClick={() => {
                     if (btn !== current) {
                       // manual page

@@ -25,6 +25,8 @@ const Details = () => {
       }
     };
 
+    window.scroll(0, 0);
+
     fetchData(movieId);
   }, []);
 

@@ -53,7 +53,7 @@ const Search = () => {
             <h2 className="text-white text-center my-2 md:text-4xl md:my-12">
               Showing results for " {keywords} "
             </h2>
-            <div className="search_container w-full h-fit text-white my-8 mx-auto md:pl-5">
+            <div className="search_container w-full h-fit text-white my-8 md:pl-5 ">
               {results?.map((res) => (
                 <SearchContents res={res} key={res.id} type={type} />
               ))}
