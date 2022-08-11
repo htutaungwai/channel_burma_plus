@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import QandA from "./QandA";
 import FYI from "./FYI";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getMenuState } from "../../features/menu/menu";
 import Footer from "./Footer";
 

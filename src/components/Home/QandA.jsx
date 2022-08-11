@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { IoMdArrowDropdown, IoMdRadioButtonOff } from "react-icons/io";
 import Message from "./Message";
 import Slider from "react-slick";
@@ -57,9 +57,9 @@ const QandA = () => {
     >
       <div className="relative w-full h-full flex flex-col flex-wrap overflow-hidden rounded-t-md ">
         {/* bg */}
-        <div className="absolute w-full h-full -z-20 bg-slate-800 bottom-20"></div>
+        <div className="absolute w-full h-full -z-20 bg-[#191919] bottom-20"></div>
 
-        <div className="basis-2/12 bg-slate-800 p-2 flex justify-between text-base items-center  ">
+        <div className="basis-2/12 bg-[#4d4d4d] p-2 flex justify-between text-base items-center  ">
           <div className="flex gap-2 items-center  ">
             <div className="w-10 h-10 bg-pink-400 text-center rounded-full border-2 relative">
               <IoMdRadioButtonOff className="absolute -right-1 -bottom-1 text-white bg-emerald-500 rounded-full" />
@@ -84,7 +84,7 @@ const QandA = () => {
           />
         </div>
 
-        <div className="bg-slate-800  basis-8/12   max-h-[60%] min-h-[275px]">
+        <div className="bg-[#191919]  basis-8/12   max-h-[60%] min-h-[275px]">
           {/* Message Box */}
           <div
             className="wrapper custom-scroll w-full h-full  overflow-x-hidden flex flex-col gap-4 p-3 pr-6 relative"
@@ -103,7 +103,7 @@ const QandA = () => {
           </div>
         </div>
 
-        <div className=" basis-2/12 bg-neutral-900  rounded-b-md flex items-center justify-between rounded-t-[20px] relative ">
+        <div className=" basis-2/12 bg-[#201e1e] rounded-b-md flex items-center justify-between rounded-t-[20px] relative ">
           <div className="w-full h-[80%] max-h-[80%] max-w-[85%] flex items-center justify-center relative ml-6  px-2 ">
             <Slider {...settings} className="w-275">
               {QAs.map(({ id, question }) => {

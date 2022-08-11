@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import AnimatedRoutes from "./AnimatedRoutes";
 import FeedControl from "./components/Feed/FeedControl";
 import FeedHeader from "./components/Feed/FeedHeader";

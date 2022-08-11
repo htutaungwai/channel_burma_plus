@@ -9,7 +9,6 @@ const TvDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setErorr] = useState(null);
 
-  console.log(tvId);
   useEffect(() => {
     const fetchData = async (tvId) => {
       const url = `https://api.themoviedb.org/3/tv/${tvId}?api_key=685113a1507bae54f2638e286629cad1&language=en-US`;
@@ -28,6 +27,7 @@ const TvDetails = () => {
 
     window.scroll(0, 0);
     fetchData(tvId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error === null && !loading) {

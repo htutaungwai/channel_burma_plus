@@ -28,7 +28,7 @@ const Details = () => {
     window.scroll(0, 0);
 
     fetchData(movieId);
-  }, []);
+  });
 
   if (error === null && !loading) {
     return (

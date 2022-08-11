@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { ImPlus } from "react-icons/im";
 import {
   IoPersonCircleSharp,
@@ -22,9 +22,10 @@ import Flags from "country-flag-icons/react/3x2";
 
 const Header = () => {
   // Calling Essential Top Level Functions
+  const dispatch = useDispatch();
   const { menuFlag, languageFlag, themeFlag, mobileMenuFlag } =
     useSelector(getMenuState);
-  const dispatch = useDispatch();
+
   let menuRef = useRef();
   const handleLanguage = () => {
     dispatch(toggleLanguageFlag());
@@ -55,9 +56,11 @@ const Header = () => {
         dispatch(toggleMenuFlag());
       }
     };
+
     //Listening mousedown
     if (menuFlag) document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menuFlag]);
 
   return (
@@ -190,7 +193,7 @@ const Header = () => {
 
       {/* For mobile */}
       <div className="fixed w-full flex flex-col md:hidden z-50">
-        <div className="w-full min-h-[6rem] flex items-center justify-between px-5 bg-darkPurple">
+        <div className="w-full min-h-[4rem] flex items-center justify-between px-5 glass-header">
           <div className="relative z-20">
             <p className="text-white text-lg font-semibold uppercase font-[Righteous] z-30">
               channel burma

@@ -214,3 +214,57 @@ html {
   border: 1px solid rgba(115, 115, 115, 0.81);
   cursor: pointer;
 }
+
+.glass-header {
+  background: rgba(255, 255, 255, 0);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  /* border: 1px solid rgba(255, 255, 255, 0.07); */
+}
+
+.mobile__cloud {
+  border-radius: 50%;
+  position: absolute;
+
+  margin-top: -30px;
+  margin-left: -30px;
+  background: #c9c7c7;
+  height: 60px;
+  width: 60px;
+  box-shadow: #c9c7c7 65px -15px 0 -5px, #c9c7c7 25px -25px, #c9c7c7 30px 10px,
+    #c9c7c7 60px 15px 0 -10px, #c9c7c7 85px 5px 0 -5px;
+}
+
+.mobile__cloud--1 {
+  bottom: 10%;
+  left: 10%;
+}
+
+.mobile__cloud--2 {
+  bottom: 30%;
+  left: 70%;
+}
+
+.moblie__moon {
+  bottom: 25%;
+}
+/* mobile stars */
+
+.mobile__star {
+  position: absolute;
+}
+.mobile__star--1 {
+  top: -80%;
+  right: -100%;
+}
+.mobile__star--2 {
+  top: 40%;
+  left: -40%;
+}
+
+.mobile__star--3 {
+  bottom: -70%;
+  right: -50%;
+}

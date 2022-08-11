@@ -1,6 +1,5 @@
 import React from "react";
 import "./Card.css";
-import Poster from "../../images/poster1.jpg";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const Card = ({ poster, name, discount }) => {

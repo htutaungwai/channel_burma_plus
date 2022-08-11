@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchGenres,
@@ -22,6 +22,7 @@ const FeedContainer = () => {
   useEffect(() => {
     window.scroll(0, 0);
     dispatch(fetchGenres());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // preparing genres section

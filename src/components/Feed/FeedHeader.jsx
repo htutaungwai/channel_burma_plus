@@ -43,6 +43,7 @@ const FeedHeader = () => {
       dispatch(setManualPage(1));
       dispatch(setType("movie"));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [typeChecked]);
 
   // handling search keywords

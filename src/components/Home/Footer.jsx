@@ -17,10 +17,10 @@ const Footer = () => {
         <FaTwitter className="cursor-pointer text-2xl" />
         <FaTiktok className="cursor-pointer text-2xl" />
       </div>
-      <div className=" basis-5/6 flex justify-around items-start pt-5 text-white gap-2">
+      <div className=" basis-5/6 flex justify-around items-start pt-5 text-white gap-2 text-sm md:text-lg">
         <div>
           <h4 className=" font-semibold text-lg md:text-2xl mb-8 text-red-300">
-            Downloads
+            Download
           </h4>
           <p>Android</p>
           <p>Windows</p>
@@ -46,12 +46,15 @@ const Footer = () => {
           <p>Services</p>
           <p>Cookies</p>
           <p>Security</p>
-          <p>Copyright Claims</p>
+          <p>Copyright</p>
         </div>
       </div>
       <h5 className="absolute bottom-8 text-white left-1/2 -translate-x-1/2 text-center w-full">
         Developed by love with{" "}
-        <a className="text-blue-200 font-bold" href="#">
+        <a
+          className="text-blue-200 font-bold"
+          href="https://www.facebook.com/profile.php?id=100009918199142"
+        >
           Wai Aung Htut
         </a>
       </h5>

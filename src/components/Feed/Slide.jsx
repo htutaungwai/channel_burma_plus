@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchMovies, fetchTV } from "../../features/feed/feed";
 import "./Slide.css";
 import SlideContents from "./SlideContents";
@@ -29,6 +29,7 @@ const Slide = ({ type, collections, status }) => {
     if (status === "idle" && type === "tv") {
       dispatch(fetchTV(time));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time]);
 
   return (

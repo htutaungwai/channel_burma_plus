@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import {
@@ -31,6 +31,7 @@ const Search = () => {
         page: currentPage,
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keywords, currentPage, type]);
 
   if (
