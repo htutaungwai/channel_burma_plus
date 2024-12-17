@@ -41,19 +41,26 @@
 }
 
 .prevArrow {
-  top: 200px !important;
-  left: 70% !important;
+  top: 200px;
+  left: 85% !important;
 }
 
 @media only screen and (min-width: 400px) {
   .prevArrow {
-    left: 300px !important;
+    left: 700px !important;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .prevArrow {
     top: 400px !important;
-    left: 600px !important;
+    left: 80% !important;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .prevArrow {
+    top: 400px !important;
+    left: 90% !important;
   }
 }
