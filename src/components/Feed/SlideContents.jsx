@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import getBackgroundClass from "../../utilities/getBackgroundClass";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -32,7 +33,7 @@ const SlideContents = ({ collections, status }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     autoplay: true,
     autoplaySpeed: 3000,
     nextArrow: <SampleNextArrow />,
@@ -77,20 +78,10 @@ const SlideContents = ({ collections, status }) => {
                 }
                 if (release_date) {
                   movieTitle =
-                    movieTitle + ` (${release_date.substring(4, -1)})`;
+                    movieTitle + `(${release_date.substring(4, -1)})`;
                 }
 
-                let background;
-
-                if (vote_average > 7) {
-                  background = "bg-emerald-600";
-                } else if (vote_average > 3) {
-                  background = "bg-orange-600";
-                } else if (vote_average > 0.1) {
-                  background = "bg-red-600";
-                } else {
-                  background = "bg-slate-900";
-                }
+                let background = getBackgroundClass(vote_average);
 
                 return (
                   <div
@@ -111,7 +102,7 @@ const SlideContents = ({ collections, status }) => {
                           : Number.parseFloat(vote_average).toFixed(1)}
                       </div>
                     </div>
-                    <div className="absolute title w-28 bg-slate-600 h-10 -bottom-0 font-medium text-slate-100 rounded-t-md capitalize text-xs p-1 text-center md:h-20 md:w-56 md:text-2xl lg:text-lg lg:w-44 lg:h-16 rounded-b-lg poppins">
+                    <div className="absolute title w-28 bg-slate-600 h-10 -bottom-0 font-small text-slate-100 rounded-t-md capitalize text-xs p-1 text-center md:h-20 md:w-56 lg:text-lg lg:w-44 lg:font-semibold lg:h-16 rounded-b-lg poppins">
                       <h4>{movieTitle} </h4>
                     </div>
                   </div>

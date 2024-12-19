@@ -9,6 +9,7 @@ import {
   setType,
 } from "../../features/search/searchSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
+import MainDrawer from "../Drawer/MainDrawer";
 
 const FeedHeader = () => {
   const [inputValue, setInputValue] = useState("");
@@ -61,22 +62,24 @@ const FeedHeader = () => {
   if (!paths.includes(pathname)) {
     return (
       <>
-        <div className="w-full h-[8vh] text-white flex items-center justify-between px-4 text-3xl z-50 lg:pt-10 lg:mb-10">
-          <HiMenuAlt2 />
-          <h2 className="text-2xl md:text-5xl font-bold">
-            CB<span className="text-red-600">&#43;</span>
-          </h2>
-          <HiSearchCircle
-            className=" cursor-pointer"
-            onClick={() => {
-              setInputState(!inputState);
-            }}
-          />
+        <div className="w-full min-h-[8vh] text-white  px-4 text-3xl z-50 lg:pt-10 lg:mb-10  bg-zinc-800 text-center">
+          <div className="flex items-center justify-between pl-4">
+            <MainDrawer />
+            <h2 className="text-2xl md:text-5xl font-bold">
+              CB<span className="text-red-600">&#43;</span>
+            </h2>
+            <HiSearchCircle
+              className="cursor-pointer"
+              onClick={() => {
+                setInputState(!inputState);
+              }}
+            />
+          </div>
         </div>
         {inputState && (
           <>
             {/* Movie or TV Switch */}
-            <div className="w-full h-10  mb-4 flex justify-end  ">
+            <div className="w-full h-10  mb-4 flex justify-end  sticky ">
               <div className="min-w-[150px] min-h-[40px] lg:h-10 text-base lg:text-lg text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
                 <div className="absolute z-10 w-full h-full text-white font-bold flex justify-center  items-center poppins pointer-events-none ">
                   <div className="w-1/2 text-center">Movie</div>
@@ -116,9 +119,7 @@ const FeedHeader = () => {
                 value={inputValue}
                 onChange={handleInputValue}
               />
-              <button className=" bg-slate-300 px-2 flex justify-center items-center cursor-pointer">
-                <FaSearch className="text-2xl" />
-              </button>
+              <button className=" bg-slate-300 px-2 flex justify-center items-center cursor-pointer"></button>
             </form>
           </>
         )}

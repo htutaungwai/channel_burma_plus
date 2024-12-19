@@ -33,10 +33,10 @@ const Slide = ({ type, collections, status }) => {
   }, [time]);
 
   return (
-    <div className="w-full h-fit ">
+    <div className="w-full h-fit rounded-md">
       {/* switch */}
-      <div className="w-full h-10  mb-4 flex justify-end  pr-2 lg:pr-20">
-        <div className="min-w-[150px] min-h-[40px] lg:h-10 text-base lg:text-lg text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
+      <div className="w-full h-10  mb-4 flex justify-end pr-2 lg:pr-20">
+        <div className="min-w-[100px] min-h-[30px] lg:h-10 text-base lg:text-lg text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
           <div className="absolute z-10 w-full h-full text-white font-bold flex justify-around items-center poppins pointer-events-none">
             <span className={timeFlag ? "text-slate-500" : "text-white"}>
               Today

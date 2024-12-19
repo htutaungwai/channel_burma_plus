@@ -1,5 +1,6 @@
 import React from "react";
 import Error from "../../images/error.png";
+import getBackgroundClass from "../../utilities/getBackgroundClass";
 
 const DetailsContents = ({ content }) => {
   const {
@@ -33,16 +34,7 @@ const DetailsContents = ({ content }) => {
     movieTitle = movieTitle + ` (${release_date.substring(4, -1)})`;
   }
 
-  let background;
-  if (vote_average > 7) {
-    background = "text-emerald-600";
-  } else if (vote_average > 3) {
-    background = "text-orange-700";
-  } else if (vote_average > 0.1) {
-    background = "text-red-600";
-  } else {
-    background = "text-slate-900";
-  }
+  let background = getBackgroundClass(vote_average);
 
   let time = runtime ? runtime : episode_run_time;
   let date = release_date ? release_date : first_air_date;

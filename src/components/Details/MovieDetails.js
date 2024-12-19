@@ -12,23 +12,25 @@ const Details = () => {
   useEffect(() => {
     const fetchData = async (movieId) => {
       const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=685113a1507bae54f2638e286629cad1&language=en-US`;
-
       try {
         const response = await axios.get(url);
+        console.log(response.status);
         if (response.status === 200) {
           setDetails(response.data);
         }
       } catch (err) {
         setErorr(err.message);
+
+        throw new Error("Data not found");
       } finally {
         setLoading(false);
       }
     };
 
-    window.scroll(0, 0);
+    // window.scroll(0, 0);
 
     fetchData(movieId);
-  });
+  }, [movieId]);
 
   if (error === null && !loading) {
     return (
