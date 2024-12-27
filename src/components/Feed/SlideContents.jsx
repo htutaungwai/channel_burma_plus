@@ -95,14 +95,14 @@ const SlideContents = ({ collections, status }) => {
                     />
                     <div className="rating absolute w-28 top-0  font-bold rounded-tr-medium flex justify-end md:w-56 lg:w-44  overflow-hidden rounded-tr-lg">
                       <div
-                        className={`${background} w-fit pl-4 pr-2 pb-2 text-white rounded-bl-full md:text-2xl md:pl-6 md:pb-4 `}
+                        className={`${background} w-fit pl-4 pr-2 pb-2 text-white rounded-bl-full md:text-2xl md:pl-6 md:pb-4 font-semibold flex justify-center`}
                       >
                         {vote_average === 0
                           ? "N/A"
                           : Number.parseFloat(vote_average).toFixed(1)}
                       </div>
                     </div>
-                    <div className="absolute title w-28 bg-slate-600 h-10 -bottom-0 font-small text-slate-100 rounded-t-md capitalize text-xs p-1 text-center md:h-20 md:w-56 lg:text-lg lg:w-44 lg:font-semibold lg:h-16 rounded-b-lg poppins">
+                    <div className="absolute title w-28 bg-slate-700 h-10 -bottom-0 font-small text-slate-100 rounded-t-md capitalize text-xs p-1 text-center md:h-20 md:w-56 lg:text-lg lg:w-44 lg:font-semibold lg:h-16 rounded-b-lg poppins">
                       <h4>{movieTitle} </h4>
                     </div>
                   </div>

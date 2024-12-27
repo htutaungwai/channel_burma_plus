@@ -273,3 +273,9 @@ ul.slick-dots li button::before {
 ul.slick-dots li.slick-active button::before {
   color: crimson; /* Change button text color */
 }
+
+.mantine-Drawer-content {
+  background-color: rgb(63 63 70);
+  opacity: 0.8;
+  color: #000;
+}

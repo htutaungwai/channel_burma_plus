@@ -13,6 +13,14 @@ const MainDrawer = () => {
         opened={opened}
         onClose={close}
         title="Authentication"
+        classNames={{
+          drawer: "custom-drawer-class",
+        }}
+        styles={{
+          drawer: {
+            backgroundColor: "rgb(63, 63, 70)",
+          },
+        }}
       >
         {/* Drawer content */}
       </Drawer>
