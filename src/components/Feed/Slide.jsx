@@ -35,13 +35,14 @@ const Slide = ({ type, collections, status }) => {
   return (
     <div className="w-full h-fit rounded-md">
       {/* switch */}
-      <div className="w-full h-10  mb-4 flex justify-end pr-2 lg:pr-20">
-        <div className="min-w-[100px] min-h-[30px] lg:h-10 text-base lg:text-md text-textColor  text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
+
+      <div className="w-full mb-4 flex justify-end pr-2 lg:pr-20 ">
+        <div className="min-w-[60px] min-h-[20px] sm:min-w-[80px] sm:min-h-[25px] lg:min-w-[100px] lg:h-10 text-sm sm:text-base lg:text-md text-textColor text-center flex justify-center items-center capitalize font-normal transition-all ease-in-out duration-300 relative">
           <div className="absolute z-10 w-full h-full text-white font-bold flex justify-around items-center poppins pointer-events-none lg:fon">
             <span className={timeFlag ? "text-slate-500" : "text-white"}>
               Today
             </span>
-            <span className={timeFlag ? "text-white" : "text-slate-500 "}>
+            <span className={timeFlag ? "text-white" : "text-slate-500"}>
               Weekly
             </span>
           </div>
@@ -58,14 +59,14 @@ const Slide = ({ type, collections, status }) => {
                 handleTimeFlag(!timeFlag);
               }}
             />
-
             <span
               className="w-1/2 h-full bg-blue-500 absolute top-0 left-0 rounded-full transition-all duration-500 ease-in-out
-            peer-checked:bg-red-400 peer-checked:left-[100%] peer-checked:translate-x-[-100%]"
+        peer-checked:bg-red-400 peer-checked:left-[100%] peer-checked:translate-x-[-100%]"
             ></span>
           </label>
         </div>
       </div>
+
       {/* switch end */}
 
       {/* Slider */}

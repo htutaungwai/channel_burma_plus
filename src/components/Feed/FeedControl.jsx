@@ -8,7 +8,7 @@ const FeedControl = () => {
 
   if (!paths.includes(pathname)) {
     return (
-      <div className="w-full lg:hidden  h-[10vh] bg-slate-600 fixed -bottom-1 flex justify-around items-center text-white text-3xl rounded-t-3xl">
+      <div className="w-full lg:hidden  h-[10vh] bg-slate-600 fixed -bottom-1 flex justify-around items-center text-white text-3xl rounded-t-3xl z-10">
         <Link to="/feed">
           <HiHome className={pathname === "/feed" ? "text-red-400" : ""} />
         </Link>
